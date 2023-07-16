@@ -27,7 +27,7 @@ public class CT_12915 {
         Map<String, String> intputMap = new TreeMap<String, String>();
 
         for(String s : strings){
-            intputMap.put(s, Character.toString(s.codePointAt(n)));
+            intputMap.put(s, Character.toString(s.charAt(n)));
         }
         System.out.println("intputMap: " + intputMap);
 
