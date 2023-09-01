@@ -21,9 +21,18 @@ public class CT_12944 {
 
         System.out.println("sol1: " + solution(n1));
         System.out.println("sol2: " + solution(n2));
+
+        System.out.println("\nsol2-1: " + solution2(n1));
+        System.out.println("sol2-2: " + solution2(n2));
     }
 
     public static double solution(int[] arr) {
         return Arrays.stream(arr).average().getAsDouble();
+    }
+    public static double solution2(int[] arr) {
+        if(arr.length == 0) return 0;
+        int sum = 0;
+        for(int eachInt :arr){ sum += eachInt; }
+        return (double)sum/arr.length;
     }
 }

@@ -20,11 +20,23 @@ public class CT_12932 {
     }
 
     public static int[] solution(long n) {
+        char[] charArr = Long.toString(n).toCharArray();
+        int[] answer =  new int[charArr.length];
+        int pointer = 0;
+        for(int i = charArr.length-1; i >= 0; i--,pointer++){
+            answer[pointer] = charArr[i] - 48;
+            System.out.println(answer[pointer]);
+        }
 
+        return answer;
+        //Sol1
+        /*
         StringBuffer sb = new StringBuffer(String.valueOf(n));
         return Arrays.stream(sb.reverse().toString().split("")).mapToInt(Integer::parseInt).toArray();
+        */
 
         /*
+        //Sol2
         List<Integer> intList = new ArrayList<>();
         for(String tokN : sb.reverse().toString().split("")){
             intList.add(Integer.valueOf(tokN));
