@@ -19,15 +19,20 @@ public class CT_12934 {
     3은 양의 정수의 제곱이 아니므로, -1을 리턴합니다.
     * */
     public static void main(String[] args) {
-
+        long n1 = 144;
+        long n2 = 3;
+        long n3 = 14641;
+        System.out.println("sol1: " + solution(n1));
+        System.out.println("sol2: " + solution(n2));
+        System.out.println("sol3: " + solution(n3));
     }
     public static long solution(long n) {
         long answer = -1;
         long a = 1;
-        while(a*a == n){
+        while(a*a <= n){
+            if(a*a == n) answer = a;
             a++;
         }
-
-        return answer;
+        return answer == -1 ? -1: (answer+1) * (answer+1);
     }
 }

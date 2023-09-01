@@ -35,9 +35,10 @@ public class CT_12947 {
     }
 
     public static boolean solution(int x) {
-
-        boolean answer = false;
-
-        return answer;
+        int sum = 0;
+        for(String s : Integer.toString(x).split("")){
+            sum += Integer.valueOf(s);
+        }
+        return x % sum == 0 ? true : false;
     }
 }
