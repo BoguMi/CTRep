@@ -32,12 +32,24 @@ public class CT_12943 {
         int num2 = 16;
         int num3 = 626331;
 
-        System.out.printf("sol1: %d %s", solution(num1), solution(num1) == 8);
+        System.out.println("sol1: " + solution(num1));
         System.out.println("sol2: " + solution(num2));
         System.out.println("sol3: " + solution(num3));
     }
-    public static int solution(int num) {
-        int answer = 0;
+    public static int solution(long num) {
+        int answer = -1;
+
+        if(num == 1) return 0;
+
+        for(int i = 1; i <= 500 ;i++){
+            if(num%2 == 0) num /= 2;
+            else num = num * 3 + 1;
+
+            if(num == 1) {
+                answer = i;
+                break;
+            }
+        }
         return answer;
     }
 }
