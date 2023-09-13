@@ -59,10 +59,11 @@ public class CT_42587 {
         while(que.size() != 0) {
 
             boolean isHigh = false;
+            //advanced for statement - factor object cannot be removed from inside of "for statement"
             for(Job job: que){
                 System.out.println("idx: " + job.idx);
                 if(job.priority > highestPriority) highestPriority = job.priority;
-                else que.add(que.remove());
+                //else que.add(que.remove());
             }
             if(highestPriority == que.peek().priority)
 
