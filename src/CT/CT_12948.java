@@ -23,6 +23,7 @@ public class CT_12948 {
     }
 
     public static String solution(String phone_number) {
-        return new StringBuilder("*".repeat(phone_number.length()-4)).append(phone_number.substring(phone_number.length()-4)).toString();
+        //return new StringBuilder("*".repeat(phone_number.length()-4)).append(phone_number.substring(phone_number.length()-4)).toString();
+        return null;
     }
 }
