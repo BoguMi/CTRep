@@ -73,7 +73,34 @@ public class CT_42862 {
             int clothes = 1;
             for(int l : lost){ if(l==i+1) clothes -= 1; }
             for(int r : reserve){ if(r==i+1) clothes += 1; }
-            if(clothes != 1) studentMap.put(i+1,clothes);
+            studentMap.put(i+1,clothes);
+        }
+
+        for(Integer key : studentMap.keySet()){
+            if(studentMap.get(key) != 0) continue;
+            int ind = -1;
+            if(studentMap.getOrDefault(key - 1,0) == 2) ind = key -1;
+            else if(studentMap.getOrDefault(key + 1,0) == 2) ind = key +1;
+
+            if(ind != -1) {
+                studentMap.put(ind,1);
+                studentMap.put(key,1);
+            }
+        }
+        int realAnswer = 0;
+        for(Integer key : studentMap.keySet()){ if(studentMap.get(key) >= 1) realAnswer += 1; }
+
+        return realAnswer;
+    }
+
+    public static int solutionWithComment(int n, int[] lost, int[] reserve) {
+        Map<Integer,Integer> studentMap = new HashMap<>();
+        for(int i = 0; i < n; i++){
+            int clothes = 1;
+            for(int l : lost){ if(l==i+1) clothes -= 1; }
+            for(int r : reserve){ if(r==i+1) clothes += 1; }
+            //if(clothes != 1) studentMap.put(i+1,clothes);
+            studentMap.put(i+1,clothes);
             System.out.println("key: " + (i+1));
             System.out.println("val: "+studentMap.get(i+1));
         }
@@ -97,9 +124,16 @@ public class CT_42862 {
             }else{
                 System.out.println("못찾음");
                 answer++;
+                System.out.println("못찾음 수: " +answer);
             }
         }
+        int realAnswer = 0;
+        for(Integer key : studentMap.keySet()){
+            System.out.println("last pang key: "+key);
+            System.out.println("val: " + studentMap.get(key));
+            if(studentMap.get(key) >= 1) realAnswer += 1;
+        }
 
-        return n - answer;
+        return realAnswer;
     }
 }
