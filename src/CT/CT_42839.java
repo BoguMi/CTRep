@@ -1,6 +1,8 @@
 package CT;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class CT_42839 {
     //unsolved
@@ -36,12 +38,35 @@ public class CT_42839 {
         System.out.println("sol2: " + solution(nums2));
     }
     public static int solution(String numbers) {
-        HashSet<Integer> intSet = new HashSet<>();
-        int answer = 0;
-        for(char ch: numbers.toCharArray()){
 
+        List<Character> integerList = new ArrayList<>();
+        HashSet<Integer> intCombSet = new HashSet<>();
+        HashSet<Integer> oddNumSet = new HashSet<>();
+
+        int answer = 0;
+
+        for(int idx = 0 ; idx < numbers.length() ; idx ++){
+            System.out.println("idx: " + idx + ", num: " + numbers.charAt(idx));
+            intCombSet.add(Integer.valueOf(numbers.charAt(idx))-48);
+            for(int secondaryIdx = idx+1; secondaryIdx < numbers.length() ; secondaryIdx ++){
+                System.out.println("secondaryIdx: " + secondaryIdx + ", num: " + numbers.charAt(secondaryIdx));
+                System.out.println("valBind: " + numbers.charAt(idx) + numbers.charAt(secondaryIdx));
+                String concated = String.valueOf(numbers.charAt(idx)) + numbers.charAt(secondaryIdx);
+                String concated2 = numbers.charAt(secondaryIdx) + String.valueOf(numbers.charAt(idx));
+
+                intCombSet.add(Integer.valueOf(concated));
+                intCombSet.add(Integer.valueOf(concated2));
+            }
         }
 
+        System.out.println(intCombSet);
+
+
         return answer;
+    }
+
+    public static Boolean isOddNum(int num){
+
+        return true;
     }
 }
