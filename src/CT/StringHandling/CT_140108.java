@@ -2,6 +2,7 @@ package CT.StringHandling;
 
 public class CT_140108 {
     /**
+     * [Solved]
      * 문자열 s가 입력되었을 때 다음 규칙을 따라서 이 문자열을 여러 문자열로 분해하려고 합니다.
      *
      * 먼저 첫 글자를 읽습니다. 이 글자를 x라고 합시다.
