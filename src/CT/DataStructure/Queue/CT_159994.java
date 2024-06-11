@@ -1,4 +1,4 @@
-package CT;
+package CT.DataStructure.Queue;
 
 import java.util.*;
 
